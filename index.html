@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>voicetag</title>
+    <meta name="viewport" content="width=device-width, user-scalable=no" />
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body ng-app="app" ng-controller="ctrl" style="display:flex; height: 100%">
+    <div style="flex: 0 0 15em; display: flex; flex-direction: column;">
+      <section id="listen" style="flex: 1 1">
+        <h1>Speech rec</h1>
+        <label><input type="checkbox" ng-model="listening"> listening</label>
+        <div>{{result}}</div>
+      </section>
+      <section id="log" style="flex: 1 1">
+        <h1>Log</h1>
+        <div ng-repeat="row in log">
+          <div>{{row.text}}</div>
+        </div>
+      </section>
+    </div>
+    <div style="flex: 1 0">
+      <section id="preview">
+        <h1>Camera</h1>
+        <div>When you say "picture 13" or click <button ng-click="heard('picture 13')">here</button>, the current image will be sent with POST <input type="text" placeholder="url" ng-model="postUrl">?tag=13 </div>
+        <video id="videoPreview" style="height: 300px"></video>
+      </section>
+    </div>
+    <script src="3rdparty/canvas-to-blob.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.9/angular.min.js"></script>
+    <script src="main.js"></script>    
+  </body>
+</html>
