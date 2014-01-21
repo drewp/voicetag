@@ -1,6 +1,8 @@
 voicetag
 ========
 
+Demo video: https://www.youtube.com/watch?v=EW8Upc90J2M
+
 Deployment
 ----------
 Serve index.html, etc. somehow. Most of this is browser-side.
