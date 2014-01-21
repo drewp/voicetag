@@ -70,7 +70,8 @@ app.controller('ctrl', function ($scope) {
                 applyLog('posting');
                 $.ajax({
                     type: "POST",
-                    url: $scope.postUrl + "?tag=" + num,
+                    url: ($scope.postUrl + "?tag=" + num + '&' +
+                          window.location.search.replace('?', '')),
                     contentType: "image/jpeg",
                     processData: false,
                     data: blob,
@@ -133,7 +134,6 @@ app.controller('ctrl', function ($scope) {
             applyLog(err);
         });
     });
-
 
     function grab(cb) {
         var ctx = canvas.getContext('2d');
