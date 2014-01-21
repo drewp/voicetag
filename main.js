@@ -76,6 +76,9 @@ app.controller('ctrl', function ($scope) {
                     data: blob,
                     success: function () {
                         say('saved '+num);
+                    },
+                    error: function () {
+                        say(num+' failed to save');
                     }
                 });
             });
